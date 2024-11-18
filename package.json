@@ -1,12 +1,10 @@
 {
   "name": "ecom-html",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "postcss src/input.css -o dist/output.css",
-    "watch": "postcss src/input.css -o dist/output.css --watch",
-    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch & live-server"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d ."
   },
   "keywords": [],
   "author": "",
@@ -14,6 +12,7 @@
   "description": "",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "gh-pages": "^6.2.0",
     "live-server": "^1.2.2",
     "postcss": "^8.4.49",
     "postcss-cli": "^11.0.0",
